@@ -1,0 +1,838 @@
+@import "https://fonts.googleapis.com/css2?family=Geologica:wght@200&display=swap";
+
+body {
+  font-family: "Geologica", sans-serif;
+  font-style: normal;
+}
+
+/* Style page content */
+.main {
+  margin-left: 20%; /* Same as the width of the sidenav */
+  font-size: 18px; /* Increased text to enable scrolling */
+  line-height: 35px;
+  padding: 2%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 2px 20px #F0F3F4;
+  overflow-x: hidden;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+}
+
+.navblock {
+  margin:auto;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  /* keeps everything grouped */
+}
+
+.logo {
+  max-width: 200px;
+  margin-top: 75px;   /* small gap only */
+}
+
+.bottom_logo {
+  max-width: 75px;
+  margin-bottom: 120px;   /* small gap only */
+}
+
+.navblock_text {
+  margin: auto;
+  width: 100%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+.navblock_text a {
+  padding: 26px 16px 26px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.navblock_text a:hover {
+  color: #CFD8DC;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #818181;
+  text-align: center;
+}
+
+.about_accent {
+  color:  green;
+}
+
+.resume_accent {
+  color:  green;
+}
+
+.research_accent {
+  color:  #E74C3C;
+}
+
+.blog_accent {
+  color:  #8E44AD;
+}
+
+a {
+  color: #3498DB;
+  text-decoration: none;
+}
+
+.about_photo{
+  display: block;
+  margin-top: 5%;
+  width: 1000px;
+  height: 550px;
+  object-fit:cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-line {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc, transparent);
+  margin: 40px 0;
+}
+
+.about_logo{
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about_text {
+  text-align: center;
+}
+
+.about_header {
+    /* font-family: 'Permanent Marker', cursive;  */
+	color: #f1c40f;
+  }
+
+.about_links {
+  text-align: center;
+  padding: 5% 5% 5% 5%;
+}
+
+.portfolio_accent {
+  color:  #F1C40F;
+}
+
+.portfolio_image {
+  max-width: 300px;
+  max-height:300px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.portfolio-container > div {
+  background-color: white;
+  width: 50%;
+  margin: 4% 0% 4% 0%;
+  min-height: 20vh;
+  justify-content: center;
+  position: relative;
+}
+
+.portfolio-container_text {
+  width: 90%;
+  position: absolute;
+  text-align: left;
+}
+
+.portfolio-container_image {
+  width: 90%;
+  position: absolute;
+  text-align: center;
+  color: #8E44AD;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.blog-container > div {
+  background-color: white;
+  box-shadow: 2px 2px 20px #EAECEE;
+  width: 45%;
+  margin: 5% 0% 5% 0%;
+  min-height: 25vh;
+  line-height: 60px;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.blog_text {
+  width: 90%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.blog_date {
+  width: 95%;
+  padding-right: 5%;
+  font-size: 20px;
+  color: #CFD8DC;
+  text-align: end;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    background: white;
+    width: 100%; /* Full width */
+    padding: 20px 25px;
+    height: 40px; /* Fixed height for header */
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #818181;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* Hamburger animation classes */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.sidenav.active {
+    left: 0 !important;
+}
+
+.no-scroll {
+    overflow: hidden;
+    position: fixed;
+}
+
+.portfolio_iframe {
+    max-width: 100%;
+    width: 560px;
+    height: 315px;
+    border-radius: 15px; /* This rounds the corners */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+  }
+
+.portfolio_hero {
+    padding-right: 20%;
+}
+
+/* Update your media query */
+@media screen and (max-width: 1100px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .sidenav {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 50px; /* Start below the header */
+        left: -100%;
+        transition: left 0.2s ease-in-out;
+        background: white;
+    }
+
+    .sidenav.active {
+        left: 0; /* Slide in */
+    }
+
+    .sidenav a {
+        text-align: center;
+        padding: 15px 25px;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20% 6% 20% 6%;
+        font-size: 18px;
+    }
+
+    .portfolio_image {
+        display: block;
+        max-width: 80%;
+    }
+
+    .navblock_text a {
+        padding: 16px;
+    }
+
+    .footer {
+        display: none;
+      }
+
+    .blog-container > div {
+        width: 100%;
+        min-height: 30vh;
+        margin: 10% 0% 10% 0%;
+    }
+    .portfolio-container > div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .portfolio_hero {
+        padding-right: 0%;
+    }
+}
+
+
+/* Blog cards with thumbnail */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+/* Card */
+.blog-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+/* Make entire card clickable */
+.blog-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.blog-thumb {
+  width: 500px;        /* fixed small width */
+  height: 380px;       /* fixed small height */
+  object-fit: cover;   /* crop image nicely */
+  border-radius: 4px;  /* optional: rounded corners */
+  margin: 20px;        /* spacing inside the card */
+}
+
+/* Keep layout clean */
+.blog-content {
+  position: relative;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Title */
+.blog-title {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #1479b8;
+  font-weight: 500;
+  text-align: left;
+}
+
+.research-author {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.research-supervisor {
+  margin: 2px 0 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.research-abstract {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* Hover */
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 40px;
+}
+
+/* Individual card (the "box") */
+.team-row-card {
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.team-row-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+/* Image */
+.team-row-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* Text */
+.team-row-text h2 {
+  margin: 0 0 5px 0;
+  font-size: 20px;
+}
+
+.team-row-text p {
+  margin: 3px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.team-links {
+  margin-top: 10px;
+}
+
+.team-links a {
+  margin-right: 12px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.team-links a:hover {
+  color: #1479b8;
+}
+
+.lab-quote {
+  font-style: italic;
+  font-size: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.lab-list {
+  max-width: 1400px;
+  margin: 20px auto;
+  font-size: 18px;
+  text-align: left;        /* force left alignment */
+  padding-left: 20px;      /* proper bullet spacing */
+  list-style-position: outside;
+  line-height: 1.8;
+}
+
+/* Responsive: stack thumb on small screens */
+@media (max-width: 520px) {
+  .blog-link {
+    flex-direction: column;
+  }
+  .blog-thumb {
+    width: 100%;
+    height: 160px;
+  }
+  .blog-content {
+    padding: 18px;
+  }
+  .blog-date {
+    right: 14px;
+    top: 10px;
+  }
+}
+
+
+
+/* Container: 4 per row */
+.collab-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Card (same feel as blog, but compact) */
+.collab-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.collab-card p {
+  margin: 2px 0;
+  line-height: 1.4;
+}
+
+/* Hover (subtle) */
+.collab-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.collab-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Name */
+.collab-card h3 {
+  margin: 5px 0 2px 0;
+  font-size: 16px;
+}
+
+/* Department */
+.collab-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .collab-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .collab-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Publication container */
+.pub-container {
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+/* Individual publication box */
+.pub-item {
+  background: #fff;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  line-height: 1.6;
+}
+
+/* Title */
+.pub-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+/* Authors */
+.pub-authors {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Journal */
+.pub-journal {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Year */
+.pub-year {
+  font-size: 14px;
+  color: #555;
+}
+
+/* DOI */
+.pub-doi {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* Clickable DOI */
+.pub-doi a {
+  color: #1479b8;
+  text-decoration: none;
+}
+
+.pub-doi a:hover {
+  text-decoration: underline;
+}
+
+/* Table container */
+.funding-table {
+  margin-top: 25px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Each row */
+.funding-row {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr 1fr 1fr;
+  padding: 14px 18px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* Header */
+.funding-header {
+  background: #f4f6f6;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.funding-row:hover {
+  background: #fafafa;
+}
+
+
+
+/* Alumni grid: 4 per row */
+.alumni-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Slightly more compact cards for alumni */
+.alumni-container .team-row-card {
+  flex-direction: column;
+  text-align: center;
+  padding: 18px;
+}
+
+/* Smaller image */
+.alumni-container .team-row-img {
+  width: 120px;
+  height: 120px;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+/* Reduce text size slightly */
+.alumni-container .team-row-text h2 {
+  font-size: 16px;
+}
+
+.alumni-container .team-row-text p {
+  font-size: 13px;
+}
+
+
+@media (max-width: 1000px) {
+  .alumni-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .alumni-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* PI section */
+.pi-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Prevent image from stretching weirdly */
+.pi-image-wrapper {
+  flex-shrink: 0;
+}
+
+/* Image styling */
+.pi-img {
+  width: 360px;
+  height: auto;
+  border-radius: 1%;
+}
+
+/* Text */
+.pi-text {
+  flex: 1;
+  text-align: left;
+}
+
+.pi-text h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.pi-text p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: #555;
+}
+
+@media (max-width: 800px) {
+  .pi-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pi-text {
+    text-align: center;
+  }
+}
+
+
+/* Recruitment container */
+.recruit-container {
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+/* Card */
+.recruit-card {
+  background: #fff;
+  padding: 22px 24px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  line-height: 1.6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.recruit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Title */
+.recruit-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.recruit-desc {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+/* Section (like requirements) */
+.recruit-section ul {
+  margin-top: 6px;
+  font-size: 15px;
+
+  padding-left: 20px;
+}
+
+/* Contact */
+.recruit-contact {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Apply button */
+.recruit-apply {
+  margin-top: 15px;
+}
+
+.recruit-apply a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #1479b8;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.recruit-apply a:hover {
+  background-color: #0f5f8f;
+}
